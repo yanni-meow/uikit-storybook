@@ -1,11 +1,11 @@
 @import '../../styles/styles.scss';
 
 .button {
+    width: fit-content;
     background: $main;
     padding: 12px 48px;
     border-radius: 8px;
     border: none;
-    margin: 0 auto;
     color: $light;
     font-size: 18px;
     font-weight: 600;

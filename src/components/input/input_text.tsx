@@ -8,11 +8,11 @@ import { User, Mail } from '../../images/icons'
 // import { ReactComponent as Mail } from '../../images/mail.svg'
 
 interface InputProps {
-  type: string;
+  type: 'text' | 'email';
   styleProps: 'top' | 'default' | 'down';
   placeholder?: string;
   popupPlaceholder?: string;
-  icon?: string;
+  icon?: 'name' | 'mail';
 
   handleOnChange?: any;
   customOnValidationError?: any;

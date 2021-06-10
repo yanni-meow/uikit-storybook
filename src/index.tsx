@@ -336,7 +336,7 @@ export const UIKIT = () => {
                 type='text'
                 popupPlaceholder='Представтесь'
                 placeholder='ivan'
-                icon='имя'
+                icon='name'
                 handleOnChange={customHandleOnChange}
                 styleProps='default'
               />

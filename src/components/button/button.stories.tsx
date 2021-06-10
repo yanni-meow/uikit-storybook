@@ -5,52 +5,72 @@ import { withKnobs } from "@storybook/addon-knobs";
 import './style.scss';
 import { Button } from './button';
 
-const stories = storiesOf("Button", module);
-stories.addDecorator(withKnobs);
-
 const customHandleOnChange = () => {
   console.log('btn changed')
 }
 
-stories.add("default", () => {
-    return (
-        <Button 
-          type='submit'
-          name="i'm btn"
-          handleOnChange={customHandleOnChange}
-        />
-    );
-});
-stories.add("disabled", () => {
-  return (
-      <Button 
-        type='submit'
-        name="i'm disabled btn"
-        handleOnChange={customHandleOnChange}
-        disabled
-      />
-  );
-});
+storiesOf("Button", module)
+  .addDecorator(withKnobs)
+  .add("all", () => {
+      return (
+        <section className="story">
+          <h1>Here is button</h1>
+          <h2>just classic</h2>
+          <Button 
+            type='submit'
+            name="i'm btn"
+            handleOnChange={customHandleOnChange}
+          />
+          <h2>disabled</h2>
+          <Button 
+            type='submit'
+            name="i'm disabled btn"
+            handleOnChange={customHandleOnChange}
+            disabled
+          />
+          <h3>It has ButtonProps:</h3>
+          <p>
+            <span>Required are</span> <br />
+            type: 'button' | 'reset' | 'submit'; <br />
+            name: string; <br />
+            <span>Optional are</span> <br />
+            handleOnChange?: any; <br />
+            customStyle?: object; <br />
+            disabled?: boolean; <br />
+            autofocus?: boolean; <br />
+          </p>
+        </section>
+      );
+  })
+  // .add("disabled", () => {
+  //   return (
+  //       <Button 
+  //         type='submit'
+  //         name="i'm disabled btn"
+  //         handleOnChange={customHandleOnChange}
+  //         disabled
+  //       />
+  //   );
+  // });
 
-
-// storiesOf("Button", module)
-//   .addDecorator(withKnobs)
-//   .add("default", () => {
-//       return (
-//           <Button 
-//             type='submit'
-//             name="i'm btn"
-//             handleOnChange={customHandleOnChange}
-//           />
-//       );
-//   })
-//   .add("disabled", () => {
+// const stories = storiesOf("Button", module);
+// stories.addDecorator(withKnobs);
+// stories.add("default", () => {
 //     return (
 //         <Button 
 //           type='submit'
-//           name="i'm disabled btn"
+//           name="i'm btn"
 //           handleOnChange={customHandleOnChange}
-//           disabled
 //         />
 //     );
-//   });
+// });
+// stories.add("disabled", () => {
+//   return (
+//       <Button 
+//         type='submit'
+//         name="i'm disabled btn"
+//         handleOnChange={customHandleOnChange}
+//         disabled
+//       />
+//   );
+// });

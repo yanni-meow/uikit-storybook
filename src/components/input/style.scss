@@ -1,5 +1,10 @@
 @import '../../styles/styles.scss';
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .default {
     &__input {
         height: 56px;

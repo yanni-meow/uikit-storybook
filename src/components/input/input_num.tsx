@@ -4,7 +4,7 @@ import colors from '../../styles/colors.scss'
 import './style.scss'
 
 interface InputProps {
-  type: string;
+  type: 'phone' | 'number';
   styleProps: 'top' | 'default' | 'down';
   placeholder?: string;
   popupPlaceholder?: string;
