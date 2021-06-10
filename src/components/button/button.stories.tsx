@@ -32,18 +32,25 @@ stories.add("disabled", () => {
   );
 });
 
-// export default {
-//   title: 'Example/Button',
-//   component: Button,
-//   argTypes: {
-//     backgroundColor: { control: 'color' },
-//   },
-// } as Meta;
 
-// const Template: Story<any> = (args) => <Button {...args} />;
-
-// export const Default = Template.bind({});
-// Default.args = {
-//     type:'submit',
-//     name:'go modal'
-// };
+// storiesOf("Button", module)
+//   .addDecorator(withKnobs)
+//   .add("default", () => {
+//       return (
+//           <Button 
+//             type='submit'
+//             name="i'm btn"
+//             handleOnChange={customHandleOnChange}
+//           />
+//       );
+//   })
+//   .add("disabled", () => {
+//     return (
+//         <Button 
+//           type='submit'
+//           name="i'm disabled btn"
+//           handleOnChange={customHandleOnChange}
+//           disabled
+//         />
+//     );
+//   });
