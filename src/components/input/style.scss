@@ -28,12 +28,14 @@
             ~ svg {
                 fill: $accent;
             }
+            ~ .eye svg {
+                fill: $semitone;
+            }
         }
     
         &__box {
             position: relative;
             padding: 8px;
-            margin: 0 auto;
             width: 380px;
     
             > svg {
@@ -48,6 +50,11 @@
                 top: 24px;
                 cursor: pointer !important;
                 * {cursor: pointer;}
+                &:hover {
+                    ~ svg {
+                        fill: $semitone;
+                    }
+                }
             }
         }
     
@@ -162,7 +169,6 @@
         &__box {
             position: relative;
             padding: 8px;
-            margin: 0 auto;
             width: 380px;
         }
     

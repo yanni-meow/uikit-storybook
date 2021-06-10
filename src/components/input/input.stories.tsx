@@ -26,6 +26,14 @@ stories.add("default", () => {
           handleOnChange={customHandleOnChange}
           styleProps='default'
         />
+        <InputText
+          type='email'
+          popupPlaceholder='ur email'
+          placeholder='your_mail@please.com'
+          icon='mail'
+          handleOnChange={customHandleOnChange}
+          styleProps='default'
+        /> 
         <InputNum
           type='phone'
           placeholder='+7 (999) 999-99-99'
@@ -58,6 +66,14 @@ stories.add("down border", () => {
         handleOnChange={customHandleOnChange}
         styleProps='down'
       />
+      <InputText
+        type='email'
+        popupPlaceholder='ur email'
+        placeholder='your_mail@please.com'
+        icon='mail'
+        handleOnChange={customHandleOnChange}
+        styleProps='down'
+      /> 
       <InputNum
         type='phone'
         placeholder='+7 (999) 999-99-99'
@@ -90,6 +106,14 @@ stories.add("full border", () => {
         handleOnChange={customHandleOnChange}
         styleProps='top'
       />
+      <InputText
+        type='email'
+        popupPlaceholder='ur email'
+        placeholder='your_mail@please.com'
+        icon='mail'
+        handleOnChange={customHandleOnChange}
+        styleProps='top'
+      /> 
       <InputNum
         type='phone'
         placeholder='+7 (999) 999-99-99'

@@ -70,9 +70,10 @@
                 align-items: center;
                 * { cursor: pointer; }
                 svg { 
-                    fill: $dark;
+                    fill: $semitone;
+                    margin: 0 4px;
                     &:hover {
-                        fill: $semitone;
+                        fill: $main;
                     }
                 }
             }
@@ -83,6 +84,14 @@
                 color: $dark;
                 margin: 4px;
                 padding: 4px;
+                font-size: 16px;
+            }
+            &__input {
+                width: 65%;
+                height: 100%;
+            }
+            &__btn {
+                width: 35%;
             }
             
         }

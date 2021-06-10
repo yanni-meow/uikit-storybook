@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+
 import './style.scss'
+import colors from '../../styles/colors.scss'
+import { ArrowD, Eye } from '../../images/icons'
 
 // import {ReactComponent as Arrow} from '../../images/arrow_down.svg'
 // import { ReactComponent as Eye } from '../../images/eye.svg'
-// import colors from '../../styles/colors.scss'
 
 interface ColumnsIncludes {
   name: string;
@@ -58,20 +60,24 @@ export const Columns = (props: ColumnProps) => {
           {!isOpenSearch[item.name] && (
             <p className='table__cell__top__pointer'>
               {item.name}
-              {/* <Arrow
-                fill={colors.semiton}
-                style={{ marginLeft: '8px' }}
-                onClick={() => {
-                  sortData(item.key)
-                }}
-              />
-              <Eye
-                fill={colors.semiton}
-                style={{ marginLeft: '8px' }}
-                onClick={() => {
-                  setIsOpenSearch({ ...isOpenSearch, [item.name]: true })
-                }}
-              /> */}
+              <span
+              onClick={() => {
+                sortData(item.key)
+              }}>
+                <ArrowD
+                  fill={colors.semiton}
+                  style={{ marginLeft: '8px' }}
+                />
+              </span>
+              <span
+              onClick={() => {
+                setIsOpenSearch({ ...isOpenSearch, [item.name]: true })
+              }}>
+                <Eye
+                  fill={colors.semiton}
+                  style={{ marginLeft: '8px' }}
+                />
+              </span>
             </p>
           )}
 
@@ -107,12 +113,14 @@ export const Columns = (props: ColumnProps) => {
           {!isOpenSearch[item.name] && (
             <p
               className='table__cell__top__pointer'
-              onClick={() => {
-                setIsOpenSearch({ ...isOpenSearch, [item.name]: true })
-              }}
             >
               {item.name}
-              {/* <Eye fill={colors.semiton} style={{ marginLeft: '8px' }} /> */}
+              <span
+                onClick={() => {
+                  setIsOpenSearch({ ...isOpenSearch, [item.name]: true })
+                }} >
+                <Eye fill={colors.semiton} style={{ marginLeft: '8px' }} />
+              </span>
             </p>
           )}
 
@@ -144,14 +152,14 @@ export const Columns = (props: ColumnProps) => {
     } else if (item.sortable) {
       // sortable column
       return (
-        <p
-          className='table__cell__top__pointer'
+        <p className='table__cell__top__pointer' >
+          {item.name}
+          <span
           onClick={() => {
             sortData(item.key)
-          }}
-        >
-          {item.name}
-          {/* <Arrow fill={colors.semiton} style={{ marginLeft: '8px' }} /> */}
+          }}>
+            <ArrowD fill={colors.semiton} style={{ marginLeft: '8px' }} />
+          </span>
         </p>
       )
     } else {

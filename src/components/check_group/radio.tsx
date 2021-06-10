@@ -8,7 +8,7 @@ interface RadioItem {
   disabled?: boolean;
 }
 interface RadioProps {
-  radioToRender: Array<RadioItem>;
+  radioToRender: RadioItem[];
   handleOnChange?: any;
 }
 

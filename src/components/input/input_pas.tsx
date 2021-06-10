@@ -3,12 +3,9 @@ import React, { useState } from 'react'
 import colors from '../../styles/colors.scss'
 import './style.scss'
 
+import { Lock, Eye } from '../../images/icons'
 // import { ReactComponent as Lock } from '../../images/lock.svg'
 // import { ReactComponent as Eye } from '../../images/eye.svg'
-
-// import style_default from './style_default.scss'
-// import style_top from './style_top.scss'
-// import style_down from './style_down.scss'
 
 interface InputProps {
   confirm: boolean;
@@ -42,10 +39,6 @@ export const InputPass = ({
   const [validError, setValidError] = useState(false)
   const [showPass, setShowPass] = useState(false)
   const [showConfirmPass, setShowConfirmPass] = useState(false)
-
-  //
-  console.log(setShowPass, setShowConfirmPass)
-  //
 
   const [confirmValidError, setConfirmValidError] = useState(false)
   const [confirmInputValue, setConfirmInputValue] = useState('')
@@ -161,19 +154,19 @@ export const InputPass = ({
           </p>
         )}
 
-       {/* {styleProps === 'default' && (
+       {styleProps === 'default' && (
         <React.Fragment>
           <Lock fill={validError ? colors.mistake : colors.dark} />
-          <div className={`${styleProps}__eye`}>
+          <div className={`eye`}>
             <Eye
+              fill={showPass ? colors.accent : colors.dark}
               onClick={() => {
                 setShowPass(!showPass)
               }}
-              fill={showPass ? colors.mistake : colors.semiton}
             />
           </div>
         </React.Fragment>
-       )} */}
+       )}
       </div>
 
       {confirm && (
@@ -204,10 +197,10 @@ export const InputPass = ({
             </p>
           )}
 
-          {/* {styleProps === 'default' && (
+          {styleProps === 'default' && (
             <React.Fragment>
               <Lock fill={confirmValidError ? colors.mistake : colors.dark} />
-              <div className={`${styleProps}__eye`}>
+              <div className={`eye`}>
                 <Eye
                   onClick={() => {
                     setShowConfirmPass(!showConfirmPass)
@@ -216,8 +209,7 @@ export const InputPass = ({
                 />
               </div>
             </React.Fragment>
-          )} */}
-
+          )}
 
         </div>
       )}

@@ -3,10 +3,6 @@ import React, { useState } from 'react'
 import colors from '../../styles/colors.scss'
 import './style.scss'
 
-// import style_default from './style_default.scss'
-// import style_top from './style_top.scss'
-// import style_down from './style_down.scss'
-
 interface InputProps {
   type: string;
   styleProps: 'top' | 'default' | 'down';

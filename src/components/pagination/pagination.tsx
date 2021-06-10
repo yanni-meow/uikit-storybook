@@ -1,6 +1,8 @@
 import React from 'react'
 
 import './style.scss'
+import { ArrowL, ArrowR } from '../../images/icons'
+
 // import { ReactComponent as Left } from '../../images/arrow_left.svg'
 // import { ReactComponent as Right } from '../../images/arrow_right.svg'
 
@@ -58,7 +60,7 @@ export const Pagination = (props: PaginationProps) => {
           }}
           disabled={pagination.initPage === 1}
         >
-          {/* <Left /> */}
+          <ArrowL />
         </button>
       </li>{' '}
       {pagesBtn()}
@@ -71,7 +73,7 @@ export const Pagination = (props: PaginationProps) => {
           }}
           disabled={pagination.initPage === totalPages}
         >
-          {/* <Right /> */}
+          <ArrowR />
         </button>
       </li>
     </ul>

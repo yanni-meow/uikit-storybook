@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import colors from '../../styles/colors.scss'
 import './style_default.scss'
+import { ArrowD } from '../../images/icons'
+
 // import { ReactComponent as Arrow } from '../../images/arrow_down.svg'
 
 interface SelectProps {
@@ -103,7 +105,7 @@ export const SelectDefault = (props: SelectProps) => {
           value={inputValue}
         />
         <div className='select__arrow'>
-          {/* <Arrow style={{ fill: isOpen ? colors.accent : colors.dark }} /> */}
+          <ArrowD style={{ fill: isOpen ? colors.accent : colors.dark }} />
         </div>
       </div>
       <div

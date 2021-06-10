@@ -3,12 +3,9 @@ import React, { useState } from 'react'
 import colors from '../../styles/colors.scss'
 import './style.scss'
 
+import { User, Mail } from '../../images/icons'
 // import { ReactComponent as User } from '../../images/user.svg'
 // import { ReactComponent as Mail } from '../../images/mail.svg'
-
-// import style_default from './style_default.scss'
-// import style_top from './style_top.scss'
-// import style_down from './style_down.scss'
 
 interface InputProps {
   type: string;
@@ -27,7 +24,7 @@ export const InputText = ({
   styleProps,
   placeholder,
   popupPlaceholder,
-  // icon,
+  icon,
 
   handleOnChange,
   customOnValidationError,
@@ -129,18 +126,18 @@ export const InputText = ({
               : `${styleProps}__input__placeholder`
           }
           style={{ color: validError ? colors.mistake : '' }}
-          // style={getPlaceholder()}
         >
           {popupPlaceholder}
         </p>
       )}
 
-      {/* {styleProps === 'default' &&
-        (icon === 'имя' ? (
+      {styleProps === 'default' &&
+        (icon === 'name' ? (
           <User fill={validError ? colors.mistake : colors.dark} />
-        ) : icon === 'почта' ? (
+        ) : icon === 'mail' ? (
           <Mail fill={validError ? colors.mistake : colors.dark} />
-        ) : null)} */}
+        ) : null)
+      }
     </div>
   )
 }
