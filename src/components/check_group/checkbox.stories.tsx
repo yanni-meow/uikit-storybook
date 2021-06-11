@@ -16,21 +16,21 @@ stories.add("all", () => {
     return (
       <section className="story">
         <h1>Here is checkbox</h1>
-        <h2>just classic</h2>
-        <Checkbox 
-          name='default' 
-          handleOnChange={customHandleOnChange} 
-        />
-        <h2>checked</h2>
-        <Checkbox 
-          value
-          name="i'm done" 
-          handleOnChange={customHandleOnChange} 
-        />
-        <h2>disabled</h2>
-        <Checkbox 
-          name="u can't choose it" handleOnChange={customHandleOnChange} disabled 
-        />
+        <div className='story__examples' style={{ justifyContent: 'space-evenly' }}>
+          <Checkbox 
+            name='default' 
+            handleOnChange={customHandleOnChange} 
+          />
+          <Checkbox 
+            value
+            name="i'm done" 
+            handleOnChange={customHandleOnChange} 
+          />
+          <Checkbox 
+            name="u can't choose it" handleOnChange={customHandleOnChange} disabled 
+          />
+        </div>
+        <h1>How you can use it</h1>
         <h3>It has CheckboxProps:</h3>
         <p>
           <span>Required is</span> <br />

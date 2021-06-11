@@ -5,11 +5,8 @@ import { withKnobs } from "@storybook/addon-knobs";
 import './style.scss';
 import { Table } from './table';
 
-const stories = storiesOf("Table", module);
-stories.addDecorator(withKnobs);
-
 const customHandleOnChange = () => {
-    console.log('table changed')
+  console.log('table changed')
 }
 
   // columns has 4 keys: name (string), key (string or number), sortable & searcheble (boolean)
@@ -45,7 +42,9 @@ const customHandleOnChange = () => {
     limitPerPage: 10
   }
 
-stories.add("default", () => {
+storiesOf("Table", module)
+  .addDecorator(withKnobs)
+  .add("example", () => {
     return (
         <Table
             columns={tableColumns}
@@ -54,6 +53,36 @@ stories.add("default", () => {
             pagination={tablePagination}
             handleOnChange={customHandleOnChange}
             grid='.6fr repeat(3, 1fr)'
-      />
-    );
-});
+        />
+      );
+  })
+  .add('docs', () => {
+    return (
+      <section className="story">
+        <h1>How you can use it</h1>
+        <h3><h2>Table</h2> has next TableProps:</h3>
+        <p>
+          <span>Required are</span> <br />
+          tableName: string <br />
+          columns: Array of ColumnsItems <br />
+          <p className='story__info'>
+            name: string <br />
+            key: string | number <br />
+            sortable: boolean (to sort info in this column) <br />
+            searchable: boolean (to search info in this column) <br />
+            /sortable n searchable can be used together/
+          </p>
+          data: Array of Objects that should includes fields' keys the same as 'keys' in ColumnItems <br />
+
+          <span>Optional is</span> <br />
+            handleOnChange?: foo <br />
+            grid?: string with grid-columns-template <br />
+            pagination?: PaginationItem <br />
+            <p className='story__info'>
+              initPage: number - by default 1 <br />
+              limitPerPage: number - by default 10 <br />
+            </p>
+        </p>
+      </section>
+    )
+  })

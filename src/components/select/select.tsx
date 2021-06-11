@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import colors from '../../styles/colors.scss'
-import './style_default.scss'
+import './style.scss'
 import { ArrowD } from '../../images/icons'
 
 // import { ReactComponent as Arrow } from '../../images/arrow_down.svg'
@@ -10,12 +10,13 @@ interface SelectProps {
   data: any;
   keys: string;
   options: string;
+  styleProps: 'default' | 'down' | 'top';
   emptyAlert?: string;
   handleOnChange?: any;
 }
 
-export const SelectDefault = (props: SelectProps) => {
-  const { data, keys, options,  emptyAlert = 'no data', handleOnChange } = props
+export const Select = (props: SelectProps) => {
+  const { data, keys, options, styleProps, emptyAlert = 'no data', handleOnChange } = props
 
   const [allItemsList, setAllItemsList] = useState(data)
   const [isOpen, setIsOpen] = useState(false)
@@ -24,6 +25,7 @@ export const SelectDefault = (props: SelectProps) => {
     [options]: 'choose smthg'
   })
   const [inputValue, setInputValue] = useState('')
+  const [focus, setFocus] = useState(false)
 
   console.log(colors)
 
@@ -85,31 +87,61 @@ export const SelectDefault = (props: SelectProps) => {
     }
   }
 
+  const onFocus = () => {
+    if (!focus) setFocus(true)
+  }
+
+  const onBlur = () => {
+    setTimeout(() => {
+      if (focus) setFocus(false)
+    }, 0)
+  }
+
+  const getBorder = () => {
+    if (styleProps === 'default') {
+      if (focus) return `2px solid ${colors.main}`
+      else return
+    } else if (styleProps === 'top') {
+      if (focus) return `2px solid ${colors.main}`
+      else return `2px solid ${colors.lightBorder}`
+    } else {
+      return
+    }
+  }
+  const getBorderBottom = () => {
+    if (styleProps === 'down') {
+      if (focus) return `2px solid ${colors.main}`
+      else return `2px solid ${colors.lightBorder}`
+    } else return
+  }
+
   return (
-    <div className='select'>
+    <div className={`${styleProps}__select`}>
       <div
-        className='select__box'
+        className={`${styleProps}__select__box`}
         onClick={() => {
           setIsOpen(!isOpen)
         }}
-        // style={{
-        //   borderBottom: styleProps === 'down' ? isOpen ? `2px solid ${colors.main}`
-        //   : `2px solid ${colors.lightBorder}` : 'none' 
-        // }} 
+        style={{
+          borderBottom: getBorderBottom(),
+          border: getBorder(), 
+        }} 
       >
         <input
           type='text'
-          className='select__input'
+          className={`${styleProps}__select__input`}
           onChange={findListItem}
           placeholder={textS[options]}
           value={inputValue}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
-        <div className='select__arrow'>
+        <div className={`${styleProps}__select__arrow `}>
           <ArrowD style={{ fill: isOpen ? colors.accent : colors.dark }} />
         </div>
       </div>
       <div
-        className='select__list'
+        className={`${styleProps}__select__list`}
         style={{ maxHeight: isOpen ? '250px' : '0px' }}
       >
         {createListItem()}

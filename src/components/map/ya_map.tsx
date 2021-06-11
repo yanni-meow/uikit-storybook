@@ -81,7 +81,7 @@ export const YaMap = (props) => {
 
       if (el.markCoordinates) {
         const newAddressObject = {
-          type: mapSettings.dataType,
+          type: 'Feature',
           id,
           data: el,
           geometry: {

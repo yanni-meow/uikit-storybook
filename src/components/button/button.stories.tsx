@@ -15,19 +15,20 @@ storiesOf("Button", module)
       return (
         <section className="story">
           <h1>Here is button</h1>
-          <h2>just classic</h2>
-          <Button 
-            type='submit'
-            name="i'm btn"
-            handleOnChange={customHandleOnChange}
-          />
-          <h2>disabled</h2>
-          <Button 
-            type='submit'
-            name="i'm disabled btn"
-            handleOnChange={customHandleOnChange}
-            disabled
-          />
+          <div className="story__examples" style={{ justifyContent: 'space-evenly' }}>
+            <Button 
+              type='submit'
+              name="i'm btn"
+              handleOnChange={customHandleOnChange}
+            />
+            <Button 
+              type='submit'
+              name="i'm disabled btn"
+              handleOnChange={customHandleOnChange}
+              disabled
+            />
+          </div>
+          <h1>How you can use it</h1>
           <h3>It has ButtonProps:</h3>
           <p>
             <span>Required are</span> <br />

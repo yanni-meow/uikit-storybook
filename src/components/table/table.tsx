@@ -5,24 +5,24 @@ import { Pagination } from '../pagination/pagination'
 import { Columns } from './columns'
 import './style.scss'
 
-interface ColumnsInclude {
+interface ColumnItem {
   name: string;
   key: string | number;
   sortable: boolean;
   searchable: boolean;
 }
 
-interface PaginationInclud {
+interface PaginationItem {
   initPage: number;
   limitPerPage: number;
 }
 
 interface TableProps {
-  columns: ColumnsInclude[];
+  columns: ColumnItem[];
   data: Record<string, any>[];
   tableName: string;
   grid?: string;
-  pagination?: PaginationInclud;
+  pagination?: PaginationItem;
   handleOnChange?: any;
 }
 

@@ -5,17 +5,15 @@ import { withKnobs } from "@storybook/addon-knobs";
 import './style.scss';
 import { YaMap } from './ya_map';
 
-const stories = storiesOf("Map", module);
-stories.addDecorator(withKnobs);
-
-stories.add("default", () => {
+storiesOf("Map", module)
+    .addDecorator(withKnobs)
+    .add("example", () => {
     const mapSettings = {
         startCenter: [37.617635, 55.755821],
         startZoom: 7,
         controls: [],
-        mapTitle: 'here is title',
+        mapTitle: 'my map',
         listTitle: 'my favorite places',
-        dataType: 'Feature',
         dataProperties: {
           // balloonContentHeader: `<font size=3><b>${locationName}</b></font>`,
           // balloonContentBody: `<p>Адрес подключения: ${ip}:${port}</p><p>Описание: ${odescription}</p><p>Адрес: ${osituation}</p>`,
@@ -72,4 +70,34 @@ stories.add("default", () => {
     return (
         <YaMap mapSettings={mapSettings} data={mapData} />
     );
-});
+})
+    .add('docs', () => {
+        return (
+            <section className="story">
+            <h1>How you can use it</h1>
+            <h3><h2>Yandex map</h2> has equired MapProps:</h3>
+            <p>
+                <span>First one is 'mapSettings'</span> <br />
+                <p style={{ letterSpacing: 'normal'}}>it includes fields:</p>
+                startCenter: Array with 2 numbers - coordinates <br />
+                startZoom: number <br />
+                controls: Array of conytols names <br />
+                mapTitle: string <br />
+                listTitle: string <br />
+                dataProperties: object whith baloons properties <br />
+                pointImage: URL string <br />
+                pointImageSize: Array with 2 numbers - width and height <br />
+                closeImage: URL string <br />
+                closeImageSize:  Array with 2 numbers - width and height <br />
+              <span>And second one is 'mapData'</span> <br />
+              <p style={{ letterSpacing: 'normal'}}>it' Array of Objects those includes fields</p>
+                id: number <br />
+                locationName: string <br />
+                markCoordinates: Array with 2 numbers - coordinates <br />
+                markAddress?: string <br />
+                markInfo?: string <br />
+                fullInfo?: React.Fragment that will render after u open mark full info
+            </p>
+          </section>
+        )
+    })

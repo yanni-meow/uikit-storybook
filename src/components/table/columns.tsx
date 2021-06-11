@@ -100,7 +100,7 @@ export const Columns = (props: ColumnProps) => {
                   setIsOpenSearch({ ...isOpenSearch, [item.name]: false })
                 }}
               >
-                close
+                <img src='https://image.flaticon.com/icons/png/512/786/786195.png' alt='close' />
               </button>
             </React.Fragment>
           )}
@@ -143,7 +143,7 @@ export const Columns = (props: ColumnProps) => {
                   setIsOpenSearch({ ...isOpenSearch, [item.name]: false })
                 }}
               >
-                close
+                <img src='https://image.flaticon.com/icons/png/512/786/786195.png' alt='close' />
               </button>
             </React.Fragment>
           )}

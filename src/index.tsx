@@ -12,8 +12,7 @@ import { Button } from './components/button/button'
 import { InputText } from './components/input/input_text'
 import { InputNum } from './components/input/input_num'
 import { InputPass } from './components/input/input_pas'
-import { SelectDefault } from './components/select/select_default'
-import { SelectDown } from './components/select/select_down'
+import { Select } from './components/select/select'
 import { Checkbox } from './components/check_group/checkbox'
 import { Radio } from './components/check_group/radio'
 import { YaMap } from './components/map/ya_map'
@@ -217,7 +216,6 @@ export const UIKIT = () => {
     controls: [],
     mapTitle: 'здесь мог быть ваш заголовок',
     listTitle: 'Наши-ваши адреса',
-    dataType: 'Feature',
     dataProperties: {
       // balloonContentHeader: `<font size=3><b>${locationName}</b></font>`,
       // balloonContentBody: `<p>Адрес подключения: ${ip}:${port}</p><p>Описание: ${odescription}</p><p>Адрес: ${osituation}</p>`,
@@ -368,17 +366,19 @@ export const UIKIT = () => {
         <React.Fragment>
           {selectData.length > 0 && (
             <React.Fragment>
-                <SelectDefault
+                <Select
                     data={selectData}
                     emptyAlert='no no noo'
                     keys='numericCode'
+                    styleProps='default'
                     options='name'
                     handleOnChange={customHandleOnChange}
                 />
-                <SelectDown
+                <Select
                     data={selectData}
                     emptyAlert='¯\_(ツ)_/¯'
                     keys='numericCode'
+                    styleProps='down'
                     options='choose ur favorite country'
                     handleOnChange={customHandleOnChange}
                 />

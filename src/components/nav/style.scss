@@ -33,9 +33,11 @@
         flex-direction: column;
         position: absolute;
         overflow: hidden;
+        width: max-content;
+        min-width: 100%;
         top: 100%;
         transition: .2s;
-        transform: translate(-25%);
+        transform: translate(-50%);
     
     /*
         // display: flex;
@@ -55,10 +57,12 @@
             flex-direction: column;
             position: absolute;
             top: 100%;
-            transform: translate(-25%);
+            transform: translate(-50%);
             /* // left: 0;
             // width: 100%;*/
             overflow: hidden;
+            width: max-content;
+            min-width: 100%;
             transition: .2s;
 
             border-radius: 4px;
