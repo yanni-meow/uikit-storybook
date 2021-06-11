@@ -1,12 +1,12 @@
 {
-  "main.js": "/uikit-storybook/main.c054bb738f9be5845ae7.bundle.js",
-  "main.js.map": "/uikit-storybook/main.c054bb738f9be5845ae7.bundle.js.map",
-  "runtime~main.js": "/uikit-storybook/runtime~main.c054bb738f9be5845ae7.bundle.js",
-  "runtime~main.js.map": "/uikit-storybook/runtime~main.c054bb738f9be5845ae7.bundle.js.map",
-  "vendors~main.js": "/uikit-storybook/vendors~main.c054bb738f9be5845ae7.bundle.js",
-  "vendors~main.js.map": "/uikit-storybook/vendors~main.c054bb738f9be5845ae7.bundle.js.map",
+  "main.js": "/uikit-storybook/main.a82c48d0264c8dd94641.bundle.js",
+  "main.js.map": "/uikit-storybook/main.a82c48d0264c8dd94641.bundle.js.map",
+  "runtime~main.js": "/uikit-storybook/runtime~main.a82c48d0264c8dd94641.bundle.js",
+  "runtime~main.js.map": "/uikit-storybook/runtime~main.a82c48d0264c8dd94641.bundle.js.map",
+  "vendors~main.js": "/uikit-storybook/vendors~main.a82c48d0264c8dd94641.bundle.js",
+  "vendors~main.js.map": "/uikit-storybook/vendors~main.a82c48d0264c8dd94641.bundle.js.map",
   "iframe.html": "/uikit-storybook/iframe.html",
-  "precache-manifest.14ba6d33d9c5530829891538a78d7ea1.js": "/uikit-storybook/precache-manifest.14ba6d33d9c5530829891538a78d7ea1.js",
+  "precache-manifest.3fa713dca0cac4177253b55fc14b0cbb.js": "/uikit-storybook/precache-manifest.3fa713dca0cac4177253b55fc14b0cbb.js",
   "service-worker.js": "/uikit-storybook/service-worker.js",
-  "vendors~main.c054bb738f9be5845ae7.bundle.js.LICENSE.txt": "/uikit-storybook/vendors~main.c054bb738f9be5845ae7.bundle.js.LICENSE.txt"
+  "vendors~main.a82c48d0264c8dd94641.bundle.js.LICENSE.txt": "/uikit-storybook/vendors~main.a82c48d0264c8dd94641.bundle.js.LICENSE.txt"
 }
