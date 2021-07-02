@@ -1,0 +1,136 @@
+@import '../../styles/styles.scss';
+
+.select {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+    width: 294px;
+
+    * { transition: 0s; }
+
+    &__box {
+        width: 100%;
+        height: 40px;
+
+        display: flex; 
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        border-radius: 32px;
+        padding: 11px 40px 11px 20px;
+
+        &:hover {
+            background: $main;
+            * { background: $main; color: $light !important; }
+            .select__arrow svg { fill: $light; }
+            input {
+                &::-webkit-input-placeholder { color: $light; }
+                &::-moz-placeholder { color: $light; }
+            }
+        }
+        &:active { 
+            background: $accent; 
+            * { background: $accent; color: $light !important; }
+        }
+
+        &__choise {
+            display: flex;
+            align-items: center; 
+            justify-content: space-between;
+            padding: 4px;
+            margin: 0 2px;
+            width: max-content;
+            border-radius: 8px;
+            * { 
+                font-size: 15px;
+                background: transparent;
+                padding: 0 2px;
+                height: 24px;
+            }
+            &__name { overflow: scroll; }
+
+            &__btn {
+                color: $semitone;
+                width: max-content;
+            }
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        right: 0;
+        cursor: pointer;
+        background: $light;
+        padding: 0 18px;
+
+        & svg {
+            fill: $dark;
+        }
+        * {cursor: pointer;}
+
+    }
+
+    &__input {
+        width: 100%;
+        padding: 11px;
+        border: none;
+        position: relative;
+        color: $dark;
+        font-size: 15px;
+        line-height: 18px;
+        background: transparent;
+        &::-webkit-input-placeholder { color: $dark; }
+        &::-moz-placeholder { color: $dark; }
+    }
+
+    &__list {
+        position: absolute;
+        top: 40px;
+        z-index: 5;
+        background: $light;
+        box-shadow: 0px 19px 38px rgba(33, 38, 44, 0.15), 0px 15px 12px rgba(33, 38, 44, 0.11);
+        border-radius: 8px;
+        max-height: 250px;
+        overflow: auto;
+        width: 100%;
+
+        &__item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            padding: 5px 12px;
+            svg {
+                fill: $dark;
+            }
+
+            &:hover {
+                color: $light !important;
+                background: $main !important;
+                svg {
+                    fill: $light;
+                }
+            }
+            &:active {
+                background: $accent !important;
+                svg {
+                    fill: $light;
+                }
+            }
+        }
+
+        &__group__title {
+            color: $semitone;
+            margin: 8px 12px;
+            padding: 4px 0;
+            border-bottom: 1px solid $semitone;
+        }
+
+    }
+}
