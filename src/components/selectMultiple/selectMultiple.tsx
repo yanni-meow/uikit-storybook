@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { ArrowD } from '../../images/icons' // , Check
 import './style.scss'
@@ -109,15 +109,20 @@ export const SelectMultiple = (props: SelectMultiProps) => {
   }
 
   // закрываем выпадающий список при клику вне dropdown
-  window.onclick = function (event: any) {
-    if (
-      event.target.tagName !== 'svg' &&
-      event.target.tagName !== 'path' &&
-      !event.target.className.includes('select')
-    ) {
-      setIsOpen(false)
-    }
-  }
+  useEffect(() => {
+    const closeSelectMulti = (event: any) => {
+      if (
+        event.target.tagName !== "svg" &&
+        event.target.tagName !== "path" &&
+        !event.target.className.includes("select")
+      ) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('onclick', closeSelectMulti);
+
+    return () => window.removeEventListener('onclick', closeSelectMulti);
+  }, [])
 
   return (
     <div 
